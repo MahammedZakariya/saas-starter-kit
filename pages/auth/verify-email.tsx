@@ -15,15 +15,9 @@ VerifyEmail.getLayout = function getLayout(page: ReactElement) {
   );
 };
 
-export const getServerSideProps = async (
-  context: GetServerSidePropsContext
-) => {
-  const { locale }: GetServerSidePropsContext = context;
-
+export const getServerSideProps = async () => {
   return {
-    props: {
-      ...(locale ? await serverSideTranslations(locale, ['common']) : {}),
-    },
+ props:{}, // No translation for now
   };
 };
 
